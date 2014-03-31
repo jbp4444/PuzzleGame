@@ -1,0 +1,68 @@
+{
+    "list": [
+        {
+            "filename": "bear1.png",
+            "title": "brown bear"
+        },
+        {
+            "filename": "bear2.png",
+            "title": "white bear"
+        },
+        {
+            "filename": "penguin1_1.png",
+            "title": "penguin"
+        },
+        {
+            "filename": "elephant.png",
+            "title": "elephant"
+        },
+        {
+            "filename": "beaver.png",
+            "title": "beaver"
+        },
+        {
+            "filename": "bunny.png",
+            "title": "bunny"
+        },
+        {
+            "filename": "hippo.png",
+            "title": "hippo"
+        },
+        {
+            "filename": "goat.png",
+            "title": "goat"
+        },
+        {
+            "filename": "leopard.png",
+            "title": "leopard"
+        },
+        {
+            "filename": "monkey.png",
+            "title": "monkey"
+        },
+        {
+            "filename": "moose.png",
+            "title": "moose"
+        },
+        {
+            "filename": "owl.png",
+            "title": "owl"
+        },
+        {
+            "filename": "pig.png",
+            "title": "pig"
+        },
+        {
+            "filename": "polarbear.png",
+            "title": "polarbear"
+        },
+        {
+            "filename": "walrus.png",
+            "title": "walrus"
+        },
+        {
+            "filename": "yak.png",
+            "title": "yak"
+        },
+    ]
+}
