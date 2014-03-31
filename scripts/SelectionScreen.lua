@@ -52,7 +52,7 @@ function scene:createScene( event )
 		local fn = v.filename
 		local x = display.contentWidth/2 + aa*math.cos( i*da )
 		local y = display.contentHeight/2 + bb*math.sin( i*da )
-		print( "file "..i.." = "..fn )
+		dprint( 15, "file "..i.." = "..fn )
 		local btn = getButton( fn )
 		btn.x = x
 		btn.y = y
@@ -82,6 +82,8 @@ end
 
 -- Called prior to the removal of scene's "view" (display group)
 function scene:destroyScene( event )
+	dprint( 10, "destroyScene-SelectionScreen" )
+
 	local group = self.view
 
 	-----------------------------------------------------------------------------

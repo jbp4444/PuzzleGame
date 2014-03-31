@@ -53,13 +53,36 @@ function Game.new( gfx )
 		dprint( 17, "processButton phase=" .. event.phase )
 		local tgt = event.target
 		if( event.phase == "began" ) then
+			-- first, grab the focus so we get "ended" events
+		    display.getCurrentStage():setFocus( tgt );
+		    -- make sure we drag over the top of other pieces
 			tgt:toFront()
-			tgt.originalX = tgt.x
-			tgt.originalY = tgt.y
+			-- are we already in a drop-zone?  (i.e. a grid-box)
+			-- TODO: could keep a pointer between the piece and the grid-box it's in
+			local solution = game.solution
+			local bn = -1
+			for i=1,totalNumBoxes do
+				local gg = game.grid[i]
+				local bb = gg.contentBounds
+				if( (event.x>=bb.xMin) and (event.x<=bb.xMax) and
+					(event.y>=bb.yMin) and (event.y<=bb.yMax) ) then
+					bn = i
+					break
+				end
+			end
+			if( bn > 0 ) then
+				-- yes, we're in a drop-zone
+				-- assume we're moving it out
+				solution[bn] = 0
+			end
+
 		elseif( event.phase == "moved" ) then
 			tgt.x = event.x
 			tgt.y = event.y
+
 		elseif( event.phase == "ended" ) then
+			-- first, release the focus
+			display.getCurrentStage():setFocus( nil )
 			-- are we in a drop-zone?  (i.e. a grid-box)
 			local solution = game.solution
 			local bn = -1
@@ -73,14 +96,23 @@ function Game.new( gfx )
 				end
 			end
 			if( bn > 0 ) then
-				local gg = game.grid[bn]
-				local bb = gg.contentBounds
-				tgt.x = ( bb.xMin + bb.xMax )/2
-				tgt.y = ( bb.yMin + bb.yMax )/2
-				solution[bn] = tgt.myId
+				-- yes, we're in a drop-zone
+				-- but is it already occupied?
+				if( solution[bn] > 0 ) then 
+					transition.to( tgt, {
+						x = tgt.origX,
+						y = tgt.origY,
+						time = 400,
+					})
+				else
+					local gg = game.grid[bn]
+					local bb = gg.contentBounds
+					tgt.x = ( bb.xMin + bb.xMax )/2
+					tgt.y = ( bb.yMin + bb.yMax )/2
+					solution[bn] = tgt.myId
+				end
 			else
 				-- not in a box, return to pile
-				-- TODO: should animate this!
 				transition.to( tgt, {
 					x = tgt.origX,
 					y = tgt.origY,
@@ -231,7 +263,7 @@ function Game.new( gfx )
 	-- draw the grid
 	local grid = {}
 	for c=1,totalNumBoxes do
-		print( "c="..c.." ("..gfx.play_grid[c].center_x
+		dprint( 15, "c="..c.." ("..gfx.play_grid[c].center_x
 			..","..gfx.play_grid[c].center_y..")" )
 		local bx = display.newRect(
 			gfx.play_grid[c].center_x,

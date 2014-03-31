@@ -167,6 +167,8 @@ end
 
 -- Called prior to the removal of scene's "view" (display group)
 function scene:destroyScene( event )
+	dprint( 10, "destroyScene-SettingsScreen" )
+
 	local group = self.view
 
 	-----------------------------------------------------------------------------
