@@ -254,7 +254,6 @@ function Game.new( gfx )
 
 	-- arrange tiles in starting locations
 	for c=1,totalNumBoxes do
-		print( "c="..c.."  "..tostring(gfx.start_loc[c]) )
 		pieces[c].x = gfx.start_loc[c].center_x
 		pieces[c].y = gfx.start_loc[c].center_y
 		pieces[c].origX = pieces[c].x

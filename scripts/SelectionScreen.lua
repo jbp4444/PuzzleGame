@@ -21,7 +21,20 @@ local scene = storyboard.newScene()
 
 
 local function processButton( event )
+	-- cancel all the tweens
+	local group = scene.btnList
+	local n = #group
+	for i=1,n do
+		local btn = group[i]
+		local tween = btn.tween
+		if( tween ~= nil ) then
+			transition.cancel( tween )
+		end
+	end
+	-- TODO: should we remove all small-images?
+	-- set the parameter for which image-file to use
 	settings.imageFile = event.target.filename
+	-- transition to the next scene (the countdown scene)
 	storyboard.gotoScene( "scripts.CountdownScreen" )
 	return true
 end
@@ -43,6 +56,8 @@ function scene:createScene( event )
 		return btn
 	end
 
+	local btnList = {}
+	
 	local filelist = settings.fileList.list
 	local n = table.getn( filelist )
 	local da = 2*3.14159265/n
@@ -57,7 +72,15 @@ function scene:createScene( event )
 		btn.x = x
 		btn.y = y
 		group:insert( btn )
+		local tween = transition.to( btn, {
+			time = 2000,
+			iterations = 100,
+			rotation = 360,
+		})
+		btn.tween = tween
+		table.insert( btnList, btn )
 	end
+	self.btnList = btnList
 		
 end
 

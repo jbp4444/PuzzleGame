@@ -31,7 +31,7 @@ local filelist = readJsonFile( "assets/imageFiles.json" )
 -- global settings
 settings = {
 	colormap = 0,
-	numBoxes = 6,
+	numBoxes = 3,
 	game = "Puzzle",
 	maxToggle = 1,
 	imageFile = "assets/elephant.png",
@@ -41,4 +41,4 @@ settings = {
 dprint( 5, "display is "..display.contentWidth.." x "..display.contentHeight )
 
 -- load splash screen
-storyboard.gotoScene( "scripts.PuzzleScreen" )
+storyboard.gotoScene( "scripts.SplashScreen" )
