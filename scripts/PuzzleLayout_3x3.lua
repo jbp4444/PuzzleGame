@@ -50,7 +50,7 @@ local layout = {
 	},
 	play_grid = {
 			{
-				-- row=1, col=1,
+				-- row=1
 				center_x = W*0.50-S,
 				center_y = H*0.55-S
 			},
@@ -63,7 +63,7 @@ local layout = {
 				center_y = H*0.55-S
 			},
 			{
-				-- row=2, col=1,
+				-- row=2
 				center_x = W*0.50-S,
 				center_y = H*0.55
 			},
@@ -76,7 +76,7 @@ local layout = {
 				center_y = H*0.55
 			},
 			{
-				-- row=3, col=1,
+				-- row=3
 				center_x = W*0.50-S,
 				center_y = H*0.55+S
 			},

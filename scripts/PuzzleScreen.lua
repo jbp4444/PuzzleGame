@@ -46,6 +46,7 @@ function scene:enterScene( event )
 
 	local group = self.view
 	
+	print( "loading " .. settings.numBoxes .. "x" .. settings.numBoxes )
 	local gfx = require( "scripts.PuzzleLayout_"
 		.. settings.numBoxes .. "x" .. settings.numBoxes )
 	self.gfx = gfx

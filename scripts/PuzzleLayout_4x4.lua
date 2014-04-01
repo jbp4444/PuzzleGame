@@ -29,9 +29,9 @@ local layout = {
 	tile_size = S,
 	goal_area = {
 		text_center_x = W*0.40,
-		text_center_y = H*0.125,
+		text_center_y = H*0.10,
 		center_x = W*0.50,
-		center_y = H*0.125,
+		center_y = H*0.10,
 		width = W*0.09375,
 		height = H*0.15
 	},
@@ -50,7 +50,7 @@ local layout = {
 	},
 	play_grid = {
 			{
-				-- row=1, col=1,
+				-- row=1
 				center_x = W*0.50-S*1.50,
 				center_y = H*0.525-S*1.50
 			},
@@ -67,7 +67,7 @@ local layout = {
 				center_y = H*0.525-S*1.50
 			},
 			{
-				-- row=2, col=1,
+				-- row=2
 				center_x = W*0.50-S*1.50,
 				center_y = H*0.525-S*0.50
 			},
@@ -84,7 +84,7 @@ local layout = {
 				center_y = H*0.525-S*0.50
 			},
 			{
-				-- row=3, col=1,
+				-- row=3
 				center_x = W*0.50-S*1.50,
 				center_y = H*0.525+S*0.50
 			},
@@ -101,7 +101,7 @@ local layout = {
 				center_y = H*0.525+S*0.50
 			},
 			{
-				-- row=4, col=1,
+				-- row=4
 				center_x = W*0.50-S*1.50,
 				center_y = H*0.525+S*1.50
 			},
@@ -120,72 +120,72 @@ local layout = {
 	},
 	start_loc = {
 		{
-			-- row=1, col=1,
+			-- col=1
 			center_x = W*0.2188,
-			center_y = H*0.125
-		},
-		{
-			center_x = W*0.2188,
-			center_y = H*0.375
+			center_y = H*0.125 
 		},
 		{
 			center_x = W*0.2188,
-			center_y = H*0.625
+			center_y = H*0.375 
 		},
 		{
 			center_x = W*0.2188,
-			center_y = H*0.875
+			center_y = H*0.625 
 		},
 		{
-			-- row=2, col=1,
-			center_x = W*0.7813,
-			center_y = H*0.125
+			center_x = W*0.2188,
+			center_y = H*0.875 
 		},
 		{
+			-- col=2
 			center_x = W*0.7813,
-			center_y = H*0.375
-		},
-		{
-			center_x = W*0.7813,
-			center_y = H*0.625
+			center_y = H*0.125 
 		},
 		{
 			center_x = W*0.7813,
-			center_y = H*0.875
+			center_y = H*0.375 
 		},
 		{
-			-- row=3, col=1,
+			center_x = W*0.7813,
+			center_y = H*0.625 
+		},
+		{
+			center_x = W*0.7813,
+			center_y = H*0.875 
+		},
+		{
+			-- col=3
 			center_x = W*0.0781,
-			center_y = H*0.125
+			center_y = H*0.125 
 		},
 		{
 			center_x = W*0.0781,
-			center_y = H*0.375
+			center_y = H*0.375 
 		},
 		{
 			center_x = W*0.0781,
-			center_y = H*0.625
+			center_y = H*0.625 
 		},
 		{
 			center_x = W*0.0781,
-			center_y = H*0.875
+			center_y = H*0.875 
 		},
 		{
-			-- row=4, col=1,
+			-- col=4
 			center_x = W*0.9219,
-			center_y = H*0.125
-		},
-		{
-			center_x = W*0.9219,
-			center_y = H*0.375
+			center_y = H*0.125 
 		},
 		{
 			center_x = W*0.9219,
-			center_y = H*0.625
+			center_y = H*0.375 
 		},
 		{
 			center_x = W*0.9219,
-			center_y = H*0.875
+			center_y = H*0.625 
+		},
+		{
+			center_x = W*0.9219,
+			center_y = H*0.875 
 		},
     }
 }
